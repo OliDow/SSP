@@ -1,0 +1,14 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "Connection": "Endpoint=sb://pocstd.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XOf4Yx1JcRk8Cf52aRdZ1Cj7q2hFz/CVU0ZBP7nYzUU=",
+    "EventHubEventsSend": "Endpoint=sb://pocstd.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XOf4Yx1JcRk8Cf52aRdZ1Cj7q2hFz/CVU0ZBP7nYzUU=",
+    "EventHubEventsListen": "Endpoint=sb://pocstd.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XOf4Yx1JcRk8Cf52aRdZ1Cj7q2hFz/CVU0ZBP7nYzUU=",
+    "EventHubName": "ingest",
+    "MessageBusConnectionString": "Endpoint=sb://dev-hip-us-bus.servicebus.windows.net/;SharedAccessKeyName=tempkey;SharedAccessKey=V3hgm5IsAphfNh2V+VzmOchO5/bge5pck1xmDfxIWKs=",
+    "OutEventTopicName": "out-events",
+    "APPINSIGHTS_INSTRUMENTATIONKEY": "0ce98516-7fb2-4b80-99f6-4cceade69e9a"
+  }
+}
