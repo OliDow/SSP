@@ -1,0 +1,86 @@
+# NOTE: Requires **VS2019 16.3** or later
+
+# Rules for SSP project
+# Description: These rules will help keep code standards across projects
+
+[*]
+end_of_line = crlf
+
+################ Code files ################
+[*.{cs,vb}]
+
+#~~~~~~~~~~~ Naming rules ~~~~~~~~~~~#
+# Static or constant fields should use PascalCase (without a prefix)
+dotnet_naming_style.pascal_case.capitalization					= pascal_case
+
+dotnet_naming_symbols.constants.applicable_kinds				= field
+dotnet_naming_symbols.constants.applicable_accessibilities		= *
+dotnet_naming_symbols.constants.required_modifiers				= static ## static => static OR const / can have different rule for const if needed.
+
+dotnet_naming_rule.constants_pascal_case.symbols				= constants
+dotnet_naming_rule.constants_pascal_case.style					= pascal_case
+dotnet_naming_rule.constants_pascal_case.severity				= error
+
+# Private fields should use camelCase and be prefixed with an underscore
+dotnet_naming_style.prefix_underscore.capitalization			= camel_case
+dotnet_naming_style.prefix_underscore.required_prefix			= _
+
+dotnet_naming_symbols.private_fields.applicable_kinds           = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private
+
+dotnet_naming_rule.private_members_with_underscore.symbols		= private_fields
+dotnet_naming_rule.private_members_with_underscore.style		= prefix_underscore
+dotnet_naming_rule.private_members_with_underscore.severity		= error
+
+#~~~~~~~~~~~ Formatting rules ~~~~~~~~~~~#
+dotnet_sort_system_directives_first = false # framework using directives not before others, all in alphabetical order
+dotnet_separate_import_directive_groups = false # no blank lines allowed between using directives
+
+#~~~~~~~~~~~ Rule severity settings ~~~~~~~~~~~#
+# Roslyn
+dotnet_diagnostic.IDE1006.severity = error # enforce naming rules
+dotnet_diagnostic.IDE0005.severity = error # enforce formatting rules
+
+## These rules cannot be configured to fail the build:
+dotnet_diagnostic.IDE0001.severity = error # simplify names
+dotnet_diagnostic.IDE0002.severity = error # simplify member access
+dotnet_diagnostic.IDE0003.severity = error # remove redundant this. qualifiers
+dotnet_diagnostic.IDE0035.severity = error # remove unreachable code
+
+# StyleCop
+dotnet_diagnostic.SA0001.severity = none # XML comment analysis disabled
+dotnet_diagnostic.SA1009.severity = none 
+dotnet_diagnostic.SA1003.severity = none 
+dotnet_diagnostic.SA1000.severity = none 
+dotnet_diagnostic.SA1012.severity = none # Opening brace should be followed by a space.
+dotnet_diagnostic.SA1013.severity = none # Closing brace should be preceded by a space.
+dotnet_diagnostic.SA1101.severity = none # Prefix local calls with this
+dotnet_diagnostic.SA1116.severity = none # paramaters on new lines
+dotnet_diagnostic.SA1117.severity = none # Paramaters on new lines
+dotnet_diagnostic.SA1200.severity = none # UsingDirectivesMustBePlacedCorrectly
+dotnet_diagnostic.SA1201.severity = none # seems Records are supported, needs some investigation
+dotnet_diagnostic.SA1204.severity = none # Static members should appear before non-static members
+dotnet_diagnostic.SA1208.severity = none # namespace ordering
+dotnet_diagnostic.SA1306.severity = none # Field names must begin with lowercase letter
+dotnet_diagnostic.SA1309.severity = none # FieldNamesMustNotBeginWithUnderscore
+dotnet_diagnostic.SA1313.severity = none # seems Records are supported, needs some investigation
+dotnet_diagnostic.SA1402.severity = none # Should we move to one class per file?
+dotnet_diagnostic.SA1413.severity = none # Use trailing comma in multi-line initializers
+dotnet_diagnostic.SA1502.severity = none # ElementMustNotBeOnSingleLine
+dotnet_diagnostic.SA1516.severity = none # ElementsMustBeSeparatedByBlankLine
+dotnet_diagnostic.SA1600.severity = none # ElementsMustBeDocumented
+dotnet_diagnostic.SA1601.severity = none # Partial ElementsMustBeDocumented
+dotnet_diagnostic.SA1602.severity = none # Enumeration items should be documented
+dotnet_diagnostic.SA1633.severity = none # FileMustHaveHeader
+
+dotnet_diagnostic.SA1515.severity = silent # Single-line comment should be preceded by blank line
+dotnet_diagnostic.SA1512.severity = silent # SingleLineCommentsMustNotBeFollowedByBlankLine
+
+################ YAML ################
+[*.{yaml,yml}]
+indent_style = space
+indent_size = 2
+
+################ XML ################
+[*.xml]
+indent_style = space
