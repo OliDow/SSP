@@ -4,10 +4,10 @@ using SSP.Common.Messaging.Repository;
 // ReSharper disable InvokeAsExtensionMethod
 namespace SSP.Common.Messaging.Functions;
 
-public class TriggerBase
+public abstract class TriggerBase
 {
-    protected readonly IMessageContext MessageContext;
-    protected readonly IEventSchemaRepository EventSchemaRepository;
+    protected IMessageContext MessageContext { get; }
+    protected IEventSchemaRepository EventSchemaRepository { get; }
 
     protected TriggerBase(IMessageContext messageContext, IEventSchemaRepository eventSchemaRepository)
     {

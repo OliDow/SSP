@@ -5,6 +5,7 @@ using SSP.Common.Messaging.Functions;
 using SSP.Common.Messaging.Functions.Builders;
 using SSP.Common.Messaging.Messaging;
 using SSP.Common.Messaging.Repository;
+using SSP.Events;
 
 namespace SSP.Digital.ProjGen.FunctionApp;
 

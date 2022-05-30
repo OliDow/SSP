@@ -4,6 +4,7 @@
         <AzureFunctionsVersion>V4</AzureFunctionsVersion>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
      </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
@@ -28,7 +29,7 @@
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\..\..\Common\SSP.Common.Messaging\SSP.Common.Messaging.csproj" />
-      <ProjectReference Include="..\..\..\Common\SSP.Events\SSP.Events.csproj" />
+      <ProjectReference Include="..\..\..\EventPlatform\SSP.EP.Events\SSP.EP.Events.csproj" />
       <ProjectReference Include="..\SSP.Digital.ProjGen.Application\SSP.Digital.ProjGen.Application.csproj" />
     </ItemGroup>
 

@@ -4,8 +4,9 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     </PropertyGroup>
-    
+
     <ItemGroup>
         <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.354">
             <PrivateAssets>all</PrivateAssets>
@@ -14,8 +15,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Common\SSP.Common.Messaging\SSP.Common.Messaging.csproj" />
-      <ProjectReference Include="..\..\Common\SSP.Events\SSP.Events.csproj" />
-    </ItemGroup>
+      <ProjectReference Include="..\..\SSP.EP.Events\SSP.EP.Events.csproj" />
+    </ItemGroup>   
 
 </Project>
